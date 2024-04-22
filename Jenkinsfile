@@ -36,7 +36,7 @@ pipeline {
         }
         stage('Deploy'){
             steps {
-                sh 'docker build -t snakepy-deploy ./deploy'
+                sh 'docker build -t snakepy-deploy ./docker_'
                 sh 'docker run --name snakepy-deploy snakepy-deploy'
                 sh 'docker logs snakepy-deploy > ./log/snakepy_test_log.txt'
             }
