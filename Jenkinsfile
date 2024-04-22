@@ -24,7 +24,7 @@ pipeline {
             steps {
                 sh 'docker build -t snakepy .'
                 sh 'docker run --name snakepy snakepy'
-                sh 'docker logs pysnake > ./log/snakepy_log.txt'
+                sh 'docker logs snakepy > ./log/snakepy_log.txt'
             }
         }
         stage('Test') {
