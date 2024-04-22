@@ -1,6 +1,10 @@
-FROM snakepy
+FROM python:3.10
 LABEL authors="Julia"
 
-WORKDIR /app/snakegame-gui
+WORKDIR ./app
 
-CMD ["pytest", "-s", "-v"]
+RUN git clone https://github.com/vyahello/snakegame-gui.git
+
+WORKDIR ./snakegame-gui
+
+RUN pip install -r requirements.txt
